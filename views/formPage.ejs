@@ -1,0 +1,38 @@
+<%- include('partials/header') %>
+<%- include('partials/navbar') %>
+
+<div class="container mt-2">
+    <div class="row">
+        <div class="col-sm-8  mx-auto p-3 form-container">
+            <h1>New Post</h1>
+            <form action="/orders" method="POST" class="form-group">
+                <label for="image">Image</label>
+                <input class="p-3 form-control" type="text" name="image" placeholder="write the img url" required>
+                <label for="menu">menu</label>
+                <input class="p-3 form-control" type="text" name="menu" placeholder="write the img url" required>
+                <label for="customerName" class="d-block">customerName</label>
+                <input class="p-3 form-control" type="text" name="customerName" placeholder="write your Name" required>
+                <label for="amount" class="d-block">amount</label>
+                <input class="p-3 form-control" type="number" name="amount" placeholder="write your Name" required>
+                <label for="quantity">quantity</label>
+                <select name="quantity">
+                    <option name="quantity">1</option>
+                    <option name="quantity">2</option>
+                    <option name="quantity">3</option>
+                    <option name="quantity">5</option>
+                    <option name="quantity">6</option>
+                    <option name="quantity">8</option>
+                    <option name="quantity">9</option>
+                    <option name="quantity">10</option>
+                </select>
+                <label for="orderStatus" class="d-block">orderStatus</label>
+                <input class="p-3 form-control" type="text" name="orderStatus" placeholder="write your Name">
+                <label for="phone" class="d-block">phone</label>
+                <input class="p-3 form-control" type="number" name="phone" placeholder="write your Name" required>
+                <button class="btn btn-default rounded border bg-dark text-white" type="submit">Submit</button>
+            </form> 
+        </div>
+    </div>
+</div>
+
+<%- include('partials/footer') %>

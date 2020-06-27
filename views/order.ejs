@@ -1,0 +1,87 @@
+<%- include('partials/header') %>
+<%- include('partials/navbar') %>
+
+    <!-- s Header -->
+    <div id="header" class="container mt-4 p-5">
+        <div class="heading">
+            <h1>Order List</h1>
+        </div>
+
+        <div class="search-form d-flex align-items-center justify-content-between ">
+            <input type="text" name="invoice" placeholder="Invoice Search">             
+            <input type="text" name="title" placeholder="Search by title">  
+            <input type="text" name="phone" placeholder="Search by Phone">
+            <button class="btn btn-primary p-1 btn-search">Search</button> 
+        </div>
+    <!-- e Header -->
+
+
+    <!-- s Filter -->
+        <div class="filter grid-container text-center">
+        <span id="invoice">
+            <input type="checkbox">
+            <span>Invoice</span>
+        </span>
+        <span id="image" >Image</span>
+        <span id="Menu">
+            <span>Menu</span>
+            <svg class="bi bi-caret-down-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+            </svg>
+        </span>
+        <span id="customerName">
+            <span>Customer Name</span>
+            <svg class="bi bi-caret-down-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+            </svg>
+        </span>
+        <span id="Quantity">Quantity</span>
+        <span id="Amount">
+            <span>Amount</span>
+            <svg class="bi bi-caret-down-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+            </svg>
+        </span>
+        <span id="OrderStatus" >
+            <span>Order Status</span>
+            <svg class="bi bi-caret-down-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+            </svg>
+        </span>
+        <span id="Phone" >
+            <span>Phone</span>
+            <svg class="bi bi-caret-down-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+            </svg>
+        </span>
+    </div> 
+    <!-- e Filter -->
+
+    <!-- s items --> 
+    <% userOrder.forEach((item) =>{ %>
+        <div class="items">
+        <hr>
+        <div class="item grid-container text-center">
+            <div class="invoce-num">
+                <input type="checkbox">
+                <h6 class="d-inline-block"><%= item.invoice %></h6>
+            </div>
+            <div class="img-container d-flex">
+                <img class="img-fluid" src="<%= item.image %>" alt="">
+            </div>
+            <h6><%= item.menu %></h6>
+            <h6><%= item.customerName %></h6>
+            <h6 id="quantity" class="px-2 py-1 mx-auto"><%= item.quantity %></h6>
+            <h6 class="px-2 py-1 mx-auto"><%= item.amount %></h6>
+            <div class="order-status mx-auto px-2 py-1 rounded"><%= item.orderStatus %></div>
+            <h6>+<%= item.phone %></h6>
+        </div>
+        </div>
+        <% }) %>
+        </div>
+    
+
+    <!-- e items --> 
+
+
+<%- include('partials/footer') %>

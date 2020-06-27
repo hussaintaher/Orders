@@ -1,0 +1,18 @@
+{
+    "username": "Ali2",
+    "country": "saudi Arabia",
+    "skills": [
+        "HTML",
+         "CSS",
+          "JS"
+        ],
+    "adresses": {
+        "egypt": "Hadayaek",
+         "KSA": "Malaz",
+          "USA": "California",
+          "Germany": ["one", "two", "three"]
+          },
+          "Age": 36,
+          "working": false,
+          "identity": null
+}
