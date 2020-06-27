@@ -9,7 +9,7 @@ let faker = require('faker');
 let orderNumber = faker.random.number()
 let app = express();
 
-app.use('/assests',express.static('assests'));
+app.use(express.static('assests'));
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
 app.use(methodOverride("_method"))
 app.set('view engine', 'ejs');
@@ -19,10 +19,8 @@ app.set('view engine', 'ejs');
 console.log('hi')
 mongoose.set('useUnifiedTopology', true);
 mongoose.set('useFindAndModify', false);
-mongoose.connect('mongodb://localhost:27017/order_app', {useNewUrlParser: true})
+let URL = "mongodb://localhost:27017/order_app"
 mongoose.connect(URL, {useNewUrlParser: true})
-
-
 
 let OrderSchema = new mongoose.Schema({
     invoice: Number,
